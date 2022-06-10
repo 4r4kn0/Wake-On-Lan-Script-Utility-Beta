@@ -1,24 +1,19 @@
 #!/bin/bash
-nome=$1
+name=$1
 
-if [[ $nome == "h07ch" ]]
+if [[ $name == "your name" ]]
 then
-   echo "Loading Modules $nome"
+   echo "Loading Modules $name"
 else
    echo "Internal Error Auth Failed"
    exit  1
    exit 
 fi
 
-for i in {1..10}
-do
-   echo "Loading $i"
-done
+echo "Starting (Insert name of your host)"
+sudo etherwake -i [insert interface] [insert mac address]
 
-echo "Starting Ali"
-sudo etherwake -i eno1 2c:f0:5d:95:34:c3
-
-while [[ $scelta != -1 ]]; do
+while [[ $select != -1 ]]; do
 
     clear; echo "
  Control Interface
@@ -30,20 +25,20 @@ while [[ $scelta != -1 ]]; do
 
   2. Exit
   
-  Inserire 0, 1, 
+  Insert 0, 1, 
 "
-    read scelta
-    case $scelta in
+    read select
+    case $select in
         0)
-          echo "Select $scelta;
+          echo "Select $select;
                "
-          ping -c 5 192.168.1.55
+          ping -c 5 [insert ip]
           sleep 1
         ;;
         1)
-          echo "Select $scelta;
+          echo "Select $select;
                "   
-          ssh stefano@192.168.1.55 -p 666
+          ssh [username]@[ip] -p [port]
           sleep 1  
         ;;
 
@@ -58,4 +53,4 @@ while [[ $scelta != -1 ]]; do
 done
 
 
-echo "bye h07ch"
+echo "bye"
