@@ -1,4 +1,6 @@
-# Wake-On-Lan-Script
+# Wake-On-Lan-Script-Utility-Beta
+# A simple wake on lan script that allows you to open an ssh connection with the host and check the connection via ping
+
 Wake on lan starting and administrate machine
 1 Install etherwake on the server host
 
